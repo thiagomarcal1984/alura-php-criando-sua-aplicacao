@@ -147,3 +147,16 @@ $filme = [
 ];
 ```
 No entanto, o acesso aos dados desse array é confuso, porque usaríamos um inteiro para referenciar um elemento do array. Para resolver esse problema, usamos os arrays como uma mapeamento.
+
+## Nomeando informações
+Exemplo de mapa/dicionário/array associativo:
+```php
+$filme = [
+    "nome" => "Thor: Ragnarok",
+    "ano" => 2021,
+    "nota" => 7.8,
+    "genero" => "super-heroi"
+];
+
+echo $filme['nome'];
+```
