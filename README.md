@@ -45,3 +45,24 @@ $incluidoNoPlano = $planoPrime || $anoLancamento < 2020; // Comparação complex
 
 echo $notaFilme;
 ```
+
+## Trabalhando com textos
+O código a seguir retorna 15 mesmo, apesar de os operandos serem do tipo string!!!
+```php
+<?php
+echo "5" + "10";
+```
+
+Você pode usar interpolação e concatenação para juntar conteúdos de variáveis a uma string.
+```php
+// Resto do código
+// O ponto é o operador de concatenação do PHP.
+echo "Nome do filme: " . $nomeFilme . "\n";
+
+// Para interpolar uma variável em uma string, envolva a string
+// com aspas DUPLAS e inclua a variável que você quer interpolar.
+echo "Nota do filme: $notaFilme\n"; 
+// Envolver a string com aspas simples não permite a interpolação:
+// o texto é considerado literalmente (variáveis e caracteres de escape).
+echo 'Nota do filme: $notaFilme\n'; 
+```
