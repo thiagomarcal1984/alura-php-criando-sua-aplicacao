@@ -114,3 +114,21 @@ for ($contador = 1; $contador < $argc; $contador++) {
 }
 $notaFilme = $somaDeNotas / $quantidadeDeNotas;
 ```
+## Outros loops
+Loop com `while`:
+```php
+$contador = $argc;
+while ($contador > 0) {
+    $somaDeNotas += $argv[$contador];
+    $contador--;
+}
+```
+
+Loop com `do... while`:
+```php
+$contador = $argc;
+do {
+    $somaDeNotas += $argv[$contador];
+    $contador--;
+} while ($contador > 0);
+```
