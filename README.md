@@ -91,3 +91,14 @@ Um conceito à parte: expressão é todo conjunto de código que é avaliado e r
 ```php
 $planoPrime || $anoLancamento < 2020
 ```
+
+## Expressão condicional
+A função `match` retorna uma expressão que funciona como o comando `switch/case`.
+```php
+$genero = match ($nomeFilme) {
+    "Top Gun - Maverick" => "ação",
+    "Thor: Ragnarok" => "super-herói",
+    "Se beber não case" => "comédia", 
+    default => "gênero desconhecido"
+};
+```

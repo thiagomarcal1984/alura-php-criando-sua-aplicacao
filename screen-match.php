@@ -2,6 +2,9 @@
 echo "Bem-vindo(a) ao screen match!\n"; // note o caractere de escape \n.
 
 $nomeFilme = "Top Gun - Maverick";
+$nomeFilme = "Thor: Ragnarok";
+$nomeFilme = "Se beber não case";
+$nomeFilme = "Watchmen";
 // $argv[1] pega o primeiro parâmetro na entrada.
 // Se $argv[1] for nulo, retorna o valor padrão 2000,
 // graças ao operador de coalescência nula (??). 
@@ -34,3 +37,14 @@ if ($anoLancamento > 2022) {
 } else {
     echo "Esse filme não é um lançamento";
 }
+
+echo "\n";
+
+$genero = match ($nomeFilme) {
+    "Top Gun - Maverick" => "ação",
+    "Thor: Ragnarok" => "super-herói",
+    "Se beber não case" => "comédia", 
+    default => "gênero desconhecido"
+};
+
+echo "O gênero do filme é $genero";
