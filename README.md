@@ -181,3 +181,31 @@ E uso de funções pré-definidas do PHP para os arrays (usamos `array_sum` nest
 $notaFilme = array_sum($notas) / $quantidadeDeNotas;
 ```
 > As funções sobre arrays tem o prefixo `array_`.
+
+# Consolidando conhecimentos
+## Crie um sistema de controle de saldo bancário
+Tela proposta para o desafio: 
+```PHP
+// desafio.php
+<?php
+/*
+********************
+Titular: Vinicius Dias
+Saldo atual: R$ 1000
+*********************
+1. Consultar saldo atual
+2. Sacar valor
+3. Depositar valor
+4. Sair
+*/
+```
+
+Exemplo de arquivo que obtém a entrada de dados:
+```php
+// entrada.php
+<?php
+echo "Digite um número: \n";
+$numero = (float) fgets(STDIN);
+echo "O número é $numero\n";
+```
+> `fgets` é uma função de entrada. O parâmetro `STDIN` é uma constante que corresponde ao terminal em uso.
