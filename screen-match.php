@@ -2,7 +2,10 @@
 echo "Bem-vindo(a) ao screen match!\n"; // note o caractere de escape \n.
 
 $nomeFilme = "Top Gun - Maverick";
-$anoLancamento = 2022;
+// $argv[1] pega o primeiro parâmetro na entrada.
+// Se $argv[1] for nulo, retorna o valor padrão 2000,
+// graças ao operador de coalescência nula (??). 
+$anoLancamento = $argv[1] ?? 2000;
 $somaDeNotas = 9;
 $somaDeNotas +=  6;
 $somaDeNotas +=  8;
@@ -22,3 +25,4 @@ echo "Nota do filme: $notaFilme\n";
 // Envolver a string com aspas simples não permite a interpolação:
 // o texto é considerado literalmente (variáveis e caracteres de escape).
 echo 'Nota do filme: $notaFilme\n'; 
+echo "\nAno do filme: $anoLancamento\n"; 

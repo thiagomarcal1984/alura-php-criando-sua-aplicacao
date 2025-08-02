@@ -66,3 +66,12 @@ echo "Nota do filme: $notaFilme\n";
 // o texto é considerado literalmente (variáveis e caracteres de escape).
 echo 'Nota do filme: $notaFilme\n'; 
 ```
+
+## Entrada de dados
+Usamos o array `$argv` para obter as entradas do usuário a partir do console. A posição zero do array retorna o nome do script php que está sendo executado.
+```php
+// $argv[1] pega o primeiro parâmetro na entrada.
+// Se $argv[1] for nulo, retorna o valor padrão 2000,
+// graças ao operador de coalescência nula (??). 
+$anoLancamento = $argv[1] ?? 2000;
+```
