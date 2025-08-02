@@ -160,3 +160,24 @@ $filme = [
 
 echo $filme['nome'];
 ```
+
+## Manipulando arrays
+Casting:
+```PHP
+for ($contador = 1; $contador < $argc; $contador++) {
+    // Casting de valor para float.
+    $notas[] = (float) $argv[$contador];
+}
+```
+Uso do `foreach`:
+```PHP
+$somaDeNotas = 0;
+foreach ($notas as $nota) {
+    $somaDeNotas += $nota;
+}
+```
+E uso de funções pré-definidas do PHP para os arrays (usamos `array_sum` neste exemplo):
+```PHP
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
+```
+> As funções sobre arrays tem o prefixo `array_`.

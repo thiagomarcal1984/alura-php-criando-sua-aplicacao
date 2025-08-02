@@ -10,12 +10,14 @@ $nomeFilme = "Watchmen";
 // graças ao operador de coalescência nula (??). 
 $anoLancamento = 2000;
 $quantidadeDeNotas = $argc - 1;
-$somaDeNotas = 0;
+$notas = [];
 
 for ($contador = 1; $contador < $argc; $contador++) {
-    $somaDeNotas += $argv[$contador];
+    // Casting de valor para float.
+    $notas[] = (float) $argv[$contador];
 }
-$notaFilme = $somaDeNotas / $quantidadeDeNotas;
+
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
 
 $planoPrime = true;
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
