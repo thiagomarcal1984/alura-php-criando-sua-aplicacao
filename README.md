@@ -102,3 +102,15 @@ $genero = match ($nomeFilme) {
     default => "gênero desconhecido"
 };
 ```
+
+## Avaliando o filme
+Usando um loop para obter as notas do filme no console: 
+```php
+$quantidadeDeNotas = $argc - 1;
+$somaDeNotas = 0;
+
+for ($contador = 1; $contador < $argc; $contador++) {
+    $somaDeNotas += $argv[$contador];
+}
+$notaFilme = $somaDeNotas / $quantidadeDeNotas;
+```

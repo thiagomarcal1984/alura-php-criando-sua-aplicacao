@@ -8,13 +8,14 @@ $nomeFilme = "Watchmen";
 // $argv[1] pega o primeiro parâmetro na entrada.
 // Se $argv[1] for nulo, retorna o valor padrão 2000,
 // graças ao operador de coalescência nula (??). 
-$anoLancamento = $argv[1] ?? 2000;
-$somaDeNotas = 9;
-$somaDeNotas +=  6;
-$somaDeNotas +=  8;
-$somaDeNotas +=  7.5;
-$somaDeNotas +=  5;
-$notaFilme = $somaDeNotas / 5;
+$anoLancamento = 2000;
+$quantidadeDeNotas = $argc - 1;
+$somaDeNotas = 0;
+
+for ($contador = 1; $contador < $argc; $contador++) {
+    $somaDeNotas += $argv[$contador];
+}
+$notaFilme = $somaDeNotas / $quantidadeDeNotas;
 
 $planoPrime = true;
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
@@ -47,4 +48,6 @@ $genero = match ($nomeFilme) {
     default => "gênero desconhecido"
 };
 
-echo "O gênero do filme é $genero";
+echo "O gênero do filme é $genero\n";
+
+echo $argc;
