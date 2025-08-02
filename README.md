@@ -75,3 +75,19 @@ Usamos o array `$argv` para obter as entradas do usuário a partir do console. A
 // graças ao operador de coalescência nula (??). 
 $anoLancamento = $argv[1] ?? 2000;
 ```
+
+# Controlando o fluxo
+## Tomando decisões
+```php
+if ($anoLancamento > 2022) {
+    echo "Esse filme é um lançamento";
+} else if ($anoLancamento > 2020) {
+    echo "Esse filme ainda é novo";
+} else {
+    echo "Esse filme não é um lançamento";
+}
+```
+Um conceito à parte: expressão é todo conjunto de código que é avaliado e retorna um valor. Note que os blocos condicionais (`if`) NÃO são expressões. Já o código a seguir é um exemplo de expressão (que retorna booleano, embora não esteja sendo atribuído a uma variável):
+```php
+$planoPrime || $anoLancamento < 2020
+```

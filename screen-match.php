@@ -26,3 +26,11 @@ echo "Nota do filme: $notaFilme\n";
 // o texto é considerado literalmente (variáveis e caracteres de escape).
 echo 'Nota do filme: $notaFilme\n'; 
 echo "\nAno do filme: $anoLancamento\n"; 
+
+if ($anoLancamento > 2022) {
+    echo "Esse filme é um lançamento";
+} else if ($anoLancamento > 2020) {
+    echo "Esse filme ainda é novo";
+} else {
+    echo "Esse filme não é um lançamento";
+}
