@@ -132,3 +132,18 @@ do {
     $contador--;
 } while ($contador > 0);
 ```
+
+# Arrays em PHP
+## Listas de valores
+A variável `$argv` no PHP é um exemplo de array/lista.
+
+Segue um exemplo de array:
+```PHP
+$filme = [
+    "Thor: Ragnarok",
+    2021,
+    7.8,
+    "super-heroi"
+];
+```
+No entanto, o acesso aos dados desse array é confuso, porque usaríamos um inteiro para referenciar um elemento do array. Para resolver esse problema, usamos os arrays como uma mapeamento.

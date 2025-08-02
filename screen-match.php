@@ -50,4 +50,9 @@ $genero = match ($nomeFilme) {
 
 echo "O gênero do filme é $genero\n";
 
-echo $argc;
+$filme = [
+    "Thor: Ragnarok",
+    2021,
+    7.8,
+    "super-heroi"
+];
