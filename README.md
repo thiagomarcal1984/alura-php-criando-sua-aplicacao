@@ -209,3 +209,113 @@ $numero = (float) fgets(STDIN);
 echo "O número é $numero\n";
 ```
 > `fgets` é uma função de entrada. O parâmetro `STDIN` é uma constante que corresponde ao terminal em uso.
+
+## Implementação da solução
+Minha implementação está no arquivo `desafio.php` copiado a seguir:
+```php
+<?php
+$saldo = (float)1000;
+do {
+echo "
+********************
+Titular: Vinicius Dias
+Saldo atual: R$ $saldo
+*********************
+1. Consultar saldo atual
+2. Sacar valor
+3. Depositar valor
+4. Sair
+
+Digite sua opção: ";
+$opcao = fgets(STDIN);
+
+switch ($opcao) {
+    case 1:
+        echo "Saldo atual: $saldo";
+        break;
+    case 2:
+        do {
+            echo "Informe o valor para saque: ";
+            $saque = fgets(STDIN);
+            if (is_numeric($saque) && $saque > 0) {
+                $saldo -= $saque;
+                break;
+            }
+            echo "\nValor inválido! ";
+        } while (true);
+        break;
+    case 3:
+        do {
+            echo "Informe o valor para deposito: ";
+            $deposito = fgets(STDIN);
+            if (is_numeric($deposito) && $deposito > 0) {
+                $saldo += $deposito;
+                break;
+            }
+            echo "\nValor inválido! ";
+        } while (true);
+        break;
+    case 4:
+        echo "Tchau!";
+        break;
+    default:
+        echo "Opção inválida.";
+}
+echo "\n\n";
+} while ($opcao != 4);
+```
+
+Solução proposta pelo Vinicius Dias (contida no arquivo `conta.php`, transcrito a seguir):
+```php
+<?php
+
+// O underline é só uma ajuda visual. 
+//Ele é ignorado pelo interprestador.
+$saldo = 1_000; 
+
+$titularConta = 'Vinicius Dias';
+
+echo "********************\n";
+echo "Titular: $titularConta\n";
+echo "Saldo atual: R$ $saldo\n";
+echo "*********************\n";
+
+do {
+    echo "1. Consultar saldo atual\n";
+    echo "2. Sacar valor\n";
+    echo "3. Depositar valor\n";
+    echo "4. Sair\n";
+
+    $opcao = (int) fgets(STDIN);
+
+    switch ($opcao) {
+        case 1:
+            echo "********************\n";
+            echo "Titular: $titularConta\n";
+            echo "Saldo atual: R$ $saldo\n";
+            echo "*********************\n";
+            break;
+        case 2:
+            echo "Qual valor deseja sacar?\n";
+            $valorASacar = (float) fgets(STDIN);
+            if ($valorASacar > $saldo) {
+                echo "Saldo insuficiente\n";
+            }
+            else {
+                $saldo -= $valorASacar;
+                break;
+            }
+            break;
+        case 3:
+            echo "Qual valor deseja depositar?\n";
+            $valorADepositar = (float) fgets(STDIN);
+            $saldo += $valorADepositar;
+            break;
+        case 4:
+            echo "Adeus\n";
+            break;
+        default:
+            echo "Opção inválida.";
+    }
+} while ($opcao != 4);
+```
